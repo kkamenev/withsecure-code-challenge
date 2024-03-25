@@ -35,18 +35,18 @@ describe('splitArray', () => {
         ]);
     });
 
-    it('returns nu batches when no elements passed', () => {
+    it('returns no batches when no elements passed', () => {
         expect(splitArray([], 15, 30, 5)).toEqual([]);
     });
 
     it('handles large data', () => {
         const elements = [
-            '0-' + stringOfSize(1000000),
-            '1-' + stringOfSize(900000),
-            '2-' + stringOfSize(800000),
-            '3-' + stringOfSize(800000),
-            '4-' + stringOfSize(900000),
-            '5-' + stringOfSize(900000),
+            '0-' + stringOfSize(1_000_000),
+            '1-' + stringOfSize(900_000),
+            '2-' + stringOfSize(800_000),
+            '3-' + stringOfSize(800_000),
+            '4-' + stringOfSize(900_000),
+            '5-' + stringOfSize(900_000),
         ];
         const batches = splitArrayWithDefaultParameters(elements);
         expect(batches).toEqual([
